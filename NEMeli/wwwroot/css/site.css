@@ -132,3 +132,10 @@ main.pb-3, main.py-3 {
     height: 100%;
     width: 100%;
 }
+
+.progress {
+    font-size: 0.85rem;
+    margin: 12px 0;
+    height: 30px;
+    font-weight: bold;
+}

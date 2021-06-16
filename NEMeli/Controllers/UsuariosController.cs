@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using NEMeli.Models;
+using NEMeli.ViewModel;
 
 namespace NEMeli.Controllers
 {
@@ -23,6 +24,25 @@ namespace NEMeli.Controllers
         {
             return View(await _context.Usuarios.ToListAsync());
         }
+
+
+        // GET: Dashboard
+        public async Task<IActionResult> Dashboard()
+        {
+            var lista = await _context.Usuarios.ToListAsync();
+            DashboardViewModel dash = new DashboardViewModel()
+            {
+                UsuariosTotais = lista.Count(),
+                UsuariosCargo = lista.GroupBy(x => new { x.Cargo })
+ .Select(g => new ChaveValor() { Chave = g.Key.Cargo, Valor = g.Count() }),
+                UsuariosPais = lista.GroupBy(x => new { x.Pais })
+ .Select(g => new ChaveValor() { Chave = g.Key.Pais, Valor = g.Count() }),
+                UsuariosMes = lista.GroupBy(x => new { x.DataEntrada.Year, x.DataEntrada.Month })
+ .Select(g => new ChaveValor() { Chave = string.Concat(g.Key.Month, "/", g.Key.Year), Valor = g.Count() })
+            };
+            return View(dash);
+        }
+
 
         // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(int? id)

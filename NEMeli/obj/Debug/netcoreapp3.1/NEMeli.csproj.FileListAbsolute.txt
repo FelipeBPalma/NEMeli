@@ -174,3 +174,4 @@ C:\Users\felipebp\OneDrive - PRIME INFORMATICA ALPHA LTDA\Área de Trabalho\Meli
 C:\Users\felipebp\OneDrive - PRIME INFORMATICA ALPHA LTDA\Área de Trabalho\Meli - Arquitetura\NEMeli\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Details.cshtml.g.cs
 C:\Users\felipebp\OneDrive - PRIME INFORMATICA ALPHA LTDA\Área de Trabalho\Meli - Arquitetura\NEMeli\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Edit.cshtml.g.cs
 C:\Users\felipebp\OneDrive - PRIME INFORMATICA ALPHA LTDA\Área de Trabalho\Meli - Arquitetura\NEMeli\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Index.cshtml.g.cs
+C:\Users\felipebp\OneDrive - PRIME INFORMATICA ALPHA LTDA\Área de Trabalho\Meli - Arquitetura\NEMeli\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Dashboard.cshtml.g.cs

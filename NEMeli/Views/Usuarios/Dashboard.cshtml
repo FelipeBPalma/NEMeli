@@ -1,0 +1,74 @@
+﻿@model NEMeli.ViewModel.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="row">
+<h1>Dashboard</h1>
+
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <div class="card text-white bg-primary mb-3" style="max-width: 100%;">
+            <div class="card-header">USUÁRIOS TOTAIS</div>
+            <div class="card-body">
+                <h1>@Model.UsuariosTotais</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card text-white bg-primary mb-3" style="max-width: 100%;">
+                <div class="card-header">USUÁRIOS POR CARGO</div>
+                @foreach (var cargo in Model.UsuariosCargo)
+                {
+                    {
+                        var percent = (cargo.Valor * 100) / Model.UsuariosTotais;
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped" role="progressbar"
+                                 style="width: @percent%" aria-valuenow="@cargo.Valor" aria-valuemin="0" aria-valuemax="100">@cargo.Chave</div>
+                            </div>
+                        }
+                    }
+            </div>
+        
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <div class="card text-white bg-primary mb-3" style="max-width:  100%;">
+            <div class="card-header">USUÁRIOS POR PAÍS</div>
+
+            @foreach (var pais in Model.UsuariosPais)
+            {
+                {
+
+                    var percent = (pais.Valor * 100) / Model.UsuariosTotais;
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped" role="progressbar"
+                             style="width: @percent%" aria-valuenow="@pais.Valor" aria-valuemin="0" aria-valuemax="100">@pais.Chave</div>
+                        </div>
+                    }
+                }
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card text-white bg-primary mb-3" style="max-width: 100%;">
+            <div class="card-header">USUÁRIOS POR MÊS</div>
+            @foreach (var mes in Model.UsuariosMes)
+            {
+                {
+                    var percent = (mes.Valor * 100) / Model.UsuariosTotais;
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped" role="progressbar"
+                             style="width: @percent%" aria-valuenow="@mes.Valor" aria-valuemin="0" aria-valuemax="100">@mes.Chave</div>
+                        </div>
+                    }
+                }
+        </div>
+    </div>
+</div>
+
+
